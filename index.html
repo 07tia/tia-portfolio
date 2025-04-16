@@ -91,8 +91,49 @@
 I love using data to uncover insights, tell meaningful stories, and support smarter decision-making. One of my biggest goals is to work for a company I personally use and love — a brand that's part of my everyday life — so I can contribute to something meaningful and familiar.
 
 I created this website to showcase some of the projects I’ve been working on as I continue learning and building experience in the tech world. Thanks for stopping by!</p>
-    </div>
 
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tia's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Karla', sans-serif;
+        }
+
+        .cute-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f9a8d4; /* light pink */
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .cute-button:hover {
+            background-color: #ec4899; /* brighter pink */
+            transform: scale(1.05);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .projects, .resume {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
     <div class="content">
         <div class="projects">
             <h2>Projects</h2>
@@ -103,15 +144,11 @@ I created this website to showcase some of the projects I’ve been working on a
         </div>
 
         <div class="resume">
-    <h2>Resume</h2>
-    <p>You can download my resume as a <a href="Tran_Resume.docx.pdf" target="_blank">PDF</a>.</p>
-    <p>Want to view it online? Click below to see the full version.</p>
-    <a href="resume.html">
-        <button style="padding: 6px 14px; font-size: 0.9rem; border: none; border-radius: 6px; background-color: #f8cddc; color: #333; cursor: pointer;">
-            View Full Resume
-        </button>
-    </a>
-</div>
-
+            <h2>Resume</h2>
+            <p>You can download my resume as a <a href="Tran_Resume.docx.pdf" target="_blank">PDF</a>.</p>
+            <p>Want to view it online? Click below to see the full version.</p>
+            <a href="resume.html" class="cute-button">View Full Resume</a>
+        </div>
+    </div>
 </body>
 </html>
