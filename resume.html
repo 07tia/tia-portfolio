@@ -1,217 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tia Tran - Full Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Karla', sans-serif;
-            background-color: #f9f9f9;
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: auto;
-            color: #333;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h2 {
-            margin-top: 30px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        a {
-            color: #007acc;
-        }
-        .back {
-            margin-top: 40px;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tia Tran | Full Resume</title>
+<meta name="description" content="Full professional resume for Tia Tran — Master of Science in Information Systems." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F5F6F3;
+    --surface: #FFFFFF;
+    --ink: #16233A;
+    --ink-soft: #5B6472;
+    --teal: #1E6F63;
+    --teal-deep: #14504A;
+    --amber: #C77D3B;
+    --line: #E2E4DF;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Sticky Header ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(245,246,243,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .brand{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand span{ color: var(--teal); }
+  
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{
+    background: var(--teal-deep);
+    color: #fff;
+  }
+  .btn-primary:hover, .btn-primary:focus-visible{
+    background: var(--teal);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(20,80,74,0.25);
+  }
+  .btn-ghost{
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--line);
+  }
+  .btn-ghost:hover, .btn-ghost:focus-visible{
+    border-color: var(--teal);
+    color: var(--teal-deep);
+  }
+
+  /* ---------- Page Title & Header Section ---------- */
+  .resume-hero{
+    padding: 56px 0 32px;
+  }
+  .eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    background: rgba(30,111,99,0.08);
+    border: 1px solid rgba(30,111,99,0.22);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.15;
+    margin: 0 0 16px;
+  }
+  .contact-bar{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .contact-bar a{
+    color: var(--teal-deep);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--teal);
+    transition: color .15s ease, border-style .15s ease;
+  }
+  .contact-bar a:hover{
+    color: var(--teal);
+    border-bottom-style: solid;
+  }
+
+  /* ---------- Layout Sections ---------- */
+  .resume-section{
+    padding: 36px 0;
+  }
+  .section-title{
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 24px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after{
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* ---------- Content Cards & Items ---------- */
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .item-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .item-title{
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--ink);
+  }
+  .item-subtitle{
+    font-weight: 600;
+    color: var(--teal-deep);
+    font-size: 14.5px;
+  }
+  .item-date{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .item-location{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  /* ---------- Lists & Tags ---------- */
+  ul.resume-list{
+    margin: 12px 0 0;
+    padding-left: 20px;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+  ul.resume-list li{
+    margin-bottom: 8px;
+  }
+  ul.resume-list li:last-child{
+    margin-bottom: 0;
+  }
+
+  .skills-grid{
+    display: grid;
+    gap: 16px;
+  }
+  .skill-group h4{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+  .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  hr.rule{
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+
+  /* ---------- Footer & Back Action ---------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 40px 0 60px;
+    text-align: center;
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 600px){
+    .item-header{ flex-direction: column; gap: 2px; }
+    .item-date{ margin-bottom: 4px; }
+    .resume-hero{ padding: 36px 0 20px; }
+  }
+</style>
 </head>
 <body>
 
-    <h1>Tia Tran – Full Resume</h1>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Tia Tran<span>.</span></a>
+    <a href="TiaTran_Resume.pdf" class="btn btn-primary">Download PDF</a>
+  </div>
+</header>
 
-    <p><strong>Email:</strong> 07tiatran@gmail.com<br>
-    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tran-tia/" target="_blank">linkedin.com/in/tran-tia/</a></p>
+<main class="wrap">
 
-    <h2>Education</h2>
-    <p><strong>University of Maryland, Robert H. Smith School of Business</strong><br>
-    Master of Science in Information Systems, Expected Fall 2025</p>
-
-    <h2>Technical Skills</h2>
-<ul>
-    <!-- Programming Languages & IDEs -->
-    <li>Python (Pandas, NumPy, Matplotlib, Seaborn), RStudio, JavaScript</li>
-
-    <!-- Data Tools & Technologies -->
-    <li>SQL, MongoDB, Neo4j</li>
-
-    <!-- Data Analysis & Visualization -->
-    <li>Excel, Tableau, Data Cleaning, Data Visualization, Data Analysis</li>
-
-    <!-- Web Development -->
-    <li>HTML, CSS</li>
-
-    <!-- Platforms & Productivity Tools -->
-    <li>GitHub, ServiceNow, Microsoft Office (Excel, PowerPoint, Word, Outlook)</li>
-</ul>
-
-
-    <h2>Projects</h2>
-<ul>
-        <li>
-        <strong>Global Netflix Content Analysis</strong> | Technologies: Tableau, Microsoft Excel | October 2025<br>
-        Developed an interactive Tableau dashboard analyzing Netflix’s global catalog to uncover trends in content distribution, genre popularity, and viewing duration. 
-        Cleaned and structured data from Kaggle in Excel to enable cross-country comparisons and time-based insights.
-        Designed multi-chart visualizations including bar, box, and tree maps to highlight leading genres, director contributions, and growth patterns, providing a data-driven narrative on Netflix’s evolving global content strategy and audience focus.
-
-    </li>
-    <br> 
-    <li>
-        <strong>AI Travel Itinerary Planner |Technologies: Python (FastAPI), HTML, CSS, JavaScript, OpenAI API, Amadeus API, TripAdvisor API, Ticketmaster API, Yelp API, OpenWeather API, GitHub | October 2025<br>
-        Developed an AI-powered web application that automatically generates personalized, day-by-day travel itineraries using real-time data. Integrated multiple APIs (Amadeus, TripAdvisor, Ticketmaster, Yelp, and OpenWeather) to retrieve live flight, hotel, event, and weather information. 
-        Leveraged OpenAI’s Large Language Model (LLM) to convert raw data into natural-language trip summaries and explanations. 
-        Designed an interactive frontend for users to input preferences, modify itineraries through natural-language requests, and visualize results in a clean, dynamic layout.
-
-    </li>
-    <br>
-    <li>
-        <strong>KPC Buddhist Relief Database & Website Project</strong> | Technologies: HTML, JavaScript, CSS, SQL, Flask (Python), GitHub | February 2024 – May 2025<br>
-        Developed the front-end of a web-based database system for KPC Buddhist Relief, a nonprofit organization dedicated to humanitarian aid. Designed a responsive and user-friendly interface using HTML, JavaScript, and CSS to ensure accessibility across devices.<br>
-        Collaborated with the backend team to integrate Flask APIs and SQL databases, enabling real-time data retrieval for inventory tracking, donation requests, and expenditure records.
-    </li>
-    <br>
-   
-    </li>
-        <strong>Airbnb Price Optimization Project</strong> | Technologies: Hive (GCP Dataproc), Python (Google Colab), Google Drive, CSV | May 2025<br>
-        Developed a machine learning model to predict optimal nightly prices for Airbnb listings by analyzing features such as location, amenities, and property type.
-        Utilized Hive on Google Cloud Dataproc to preprocess large-scale data with SQL-like queries, improving query efficiency and scalability.
-        Implemented regression models in Python via Google Colab to perform exploratory analysis, train/test data splits, and model evaluation.
-</ul>
-
-    <h2>Work Experience</h2>
-
-
-<p><strong>Glow (Live Nation Partnership)  </strong><br>
-Washington, D.C. | Marketing Intern<br>
-<span style="font-style: italic;">September 2025- Present/span><br>
-- Supported multi-channel marketing campaigns (social media, email, and live event marketing) under Live Nation partnerships, driving audience engagement and lead generation for major electronic music events.<br>
-- Conducted competitor analysis and audience research to inform messaging, positioning, and outreach strategies for venue conversion campaigns, including Project Glow Festival, Echostage, and Soundcheck.
-- Leveraged Ticketmaster TM1 analytics to evaluate event performance, track ROI, and support post-event lead capture and follow-up for Project Glow Festival and affiliated venue activations.
-</p>
-
-<p><strong>College Park City University Partnership</strong><br>
-College Park, MD | Project Manager<br>
-<span style="font-style: italic;">February 2025 – December 2025</span><br>
--Coordinated cross-functional stakeholders to define technical requirements and establish data-driven frameworks for affordable housing initiatives.
--Orchestrated the launch of a centralized rental portal, transitioning manual workflows into a fully automated, compliant digital platform to ensure data integrity and process standardization.
--Optimized reporting efficiency and transparency by utilizing Excel and SharePoint to manage project plans, track performance milestones, and maintain high-fidelity documentation.
-</p>
-
-<p><strong>University of Maryland – English Business Office</strong><br>
-College Park, MD | Graduate Financial Assistant<br>
-<span style="font-style: italic;">September 2024 – Present</span><br>
-- Created a new system for managing daily action items by transitioning from an outdated process to a streamlined Excel-based
-workflow, improving efficiency and clarity for the business office team.<br>
-- Reviewed 100+ business documents, maintained organized physical and digital files, and utilized Excel functions (VLOOKUP, 
-INDEX/MATCH, SUMIF, COUNTIF, Pivot Tables) to validate data, track transactions, and oversee $100,000+ in financial records with
-conditional formatting to flag discrepancies.
-</p>
-
-<p><strong>University of Maryland – Division of Information Technology</strong><br>
-College Park, MD | IT Support Technician<br>
-<span style="font-style: italic;">January 2023 – June 2024</span><br>
-- Provided technical support to faculty, staff, and students, troubleshooting software and hardware issues across Windows and Mac systems.<br>
-- Resolved 100+ tickets per shift using ServiceNow, contributing to process improvements, enhanced documentation, and faster resolution times.
-</p>
-
-<p><strong>University of Maryland – Department of Mathematics</strong><br>
-College Park, MD | Teaching Assistant (Elementary Statistics and Probability)<br>
-<span style="font-style: italic;">August 2021 – May 2024</span><br>
-- Taught in-person classes for 50+ students, covering core statistical concepts and techniques.<br>
-- Hosted virtual office hours using RStudio to guide students through data manipulation (dplyr), visualization (ggplot2), and statistical modeling (lm(), glm()) to strengthen analytical skills.
-</p>
-
-   <p><strong>Club Glow</strong><br>
-Washington, D.C. (Remote) | Social Media Marketing Ambassador<br>
-<span style="font-style: italic;">February 2022 – Present</span><br>
-– Developed and executed social media marketing strategies to promote Club Glow events held at premier D.C. club venues—including Echostage and Soundcheck—along with the annual Project Glow Festival, boosting online visibility through targeted Instagram and TikTok content.<br>
-– Edited high-performing short-form videos using CapCut, applying trends and audio to maximize reach and engagement.<br>
-– Used Excel to track ambassador outreach, monitor content performance, and analyze engagement metrics. Led outreach efforts and networked with fellow ambassadors to align marketing goals and share content strategies.
-</p>
-
-
-<p><strong>Montgomery County Public Schools</strong><br>
-Montgomery County, MD | Substitute Teacher<br>
-<span style="font-style: italic;">Feburary 2025- Present</span><br>
-– Provided instruction for K–12 students, primarily in elementary school classrooms, across subjects including math, science, English, phonics, and reading.<br>
-– Adapted quickly to varying lesson plans or created impromptu activities when plans were unavailable, ensuring continued student learning and classroom engagement.<br>
-– Maintained a structured and inclusive learning environment, demonstrating classroom management skills while supporting the academic and emotional needs of diverse student populations.
-</p>
-
-
-<p><strong>Department of Resident Life, University of Maryland</strong><br>
-College Park, MD | Resident Assistant<br>
-<span style="font-style: italic;">August 2022 – May 2024</span><br>
-– Oversaw a residential community of 100+ undergraduate students, fostering an inclusive, safe, and supportive living environment.<br>
-– Planned and facilitated educational and social programs to promote academic success, wellness, and community building.<br>
-– Responded to conflicts, emergencies, and policy violations with professionalism and empathy, collaborating with campus resources to support resident needs and uphold university standards.
-</p>
-
- <h2>Leadership and Volunteer Experience</h2>
-<ul>
-    <li>
-        <strong>Smith Masters Information System Student Association, Vice President of Public Relations and Communication</strong> | December 2024 – Present<br>
-        Design promotional materials and event graphics using Canva to support club initiatives and increase student engagement.<br>
-        Manage internal and external communications for events, collaborating with executive board members to coordinate logistics and outreach.<br>
-        Utilize Excel to track member participation, monitor event planning timelines, and organize promotional schedules across platforms.
-    </li>
-    <br>
-    <li>
-        <strong>Vietnamese Student Association, Executive Board Member</strong> | May 2023 – May 2024<br>
-        Led philanthropy efforts that raised over $4,000 for humanitarian causes through events, campaigns, and community partnerships.<br>
-        Directed the annual Culture Show with 200+ participants, overseeing auditions, rehearsals, co-writing the play script, and logistics to celebrate Vietnamese heritage through performance and storytelling.<br>
-        Collaborated with board members to strengthen cultural programming and foster a supportive, inclusive student community.
-    </li>
-    <br>
-    <li>
-        <strong>Mckinsey & Company Forward Program, Participant</strong> | April 2025- July 2025<br>
-        Leadership development program focused on strategic problem solving, communication, and team collaboration. Gained experience in business strategy, analytical thinking, and delivering impactful solutions through workshops and mentoring.<br>
-    </li>
-</ul>
-    
-
-  <head>
-    <style>
-        .back a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f9a8d4; /* light pink */
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .back a:hover {
-            background-color: #ec4899; /* brighter pink on hover */
-            transform: scale(1.05);
-        }
-    </style>
-</head>
-<body>
-    <div class="back">
-        <a href="index.html">Back to Home</a>
+  <!-- Header / Contact -->
+  <section class="resume-hero">
+    <span class="eyebrow">Full Curriculum Vitae</span>
+    <h1>Tia Tran</h1>
+    <div class="contact-bar">
+      <span><strong>Email:</strong> <a href="mailto:07tiatran@gmail.com">07tiatran@gmail.com</a></span>
+      <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tran-tia/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tran-tia</a></span>
+      <span><strong>Location:</strong> College Park, MD</span>
     </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Education -->
+  <section class="resume-section">
+    <h2 class="section-title">Education</h2>
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">University of Maryland, Robert H. Smith School of Business</h3>
+        <span class="item-date">Expected Fall 2025</span>
+      </div>
+      <div class="item-subtitle">Master of Science in Information Systems</div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="resume-section">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="card skills-grid">
+      <div class="skill-group">
+        <h4>Programming Languages &amp; IDEs</h4>
+        <div class="tags">
+          <span class="tag">Python (Pandas, NumPy, Matplotlib, Seaborn)</span>
+          <span class="tag">RStudio</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data Tools &amp; Technologies</h4>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Neo4j</span>
+          <span class="tag">Hive (GCP Dataproc)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Analytics &amp; Visualization</h4>
+        <div class="tags">
+          <span class="tag">Excel (Advanced)</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Data Modeling</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Platforms &amp; Productivity</h4>
+        <div class="tags">
+          <span class="tag">GitHub</span>
+          <span class="tag">ServiceNow</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Microsoft Office Suite</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="resume-section">
+    <h2 class="section-title">Key Projects</h2>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Global Netflix Content Analysis</h3>
+        <span class="item-date">October 2025</span>
+      </div>
+      <div class="item-subtitle">Technologies: Tableau, Microsoft Excel</div>
+      <ul class="resume-list">
+        <li>Developed an interactive Tableau dashboard analyzing Netflix’s global catalog to uncover trends in content distribution, genre popularity, and viewing duration.</li>
+        <li>Cleaned and structured data from Kaggle in Excel to enable cross-country comparisons and time-based insights.</li>
+        <li>Designed multi-chart visualizations including bar, box, and tree maps to highlight leading genres, director contributions, and growth patterns.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">AI Travel Itinerary Planner</h3>
+        <span class="item-date">October 2025</span>
+      </div>
+      <div class="item-subtitle">Technologies: Python (FastAPI), HTML/CSS, JavaScript, OpenAI API, Third-Party APIs, GitHub</div>
+      <ul class="resume-list">
+        <li>Developed an AI-powered web application that automatically generates personalized, day-by-day travel itineraries using real-time data.</li>
+        <li>Integrated multiple APIs (Amadeus, TripAdvisor, Ticketmaster, Yelp, OpenWeather) to retrieve live flight, hotel, event, and weather information.</li>
+        <li>Leveraged OpenAI’s LLM to convert raw data into natural-language trip summaries and explanations.</li>
+        <li>Designed an interactive frontend for users to input preferences, modify itineraries through natural-language requests, and visualize results.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">KPC Buddhist Relief Database &amp; Website</h3>
+        <span class="item-date">February 2024 – May 2025</span>
+      </div>
+      <div class="item-subtitle">Technologies: HTML, JavaScript, CSS, SQL, Flask (Python), GitHub</div>
+      <ul class="resume-list">
+        <li>Developed the front-end of a web-based database system for KPC Buddhist Relief, a nonprofit organization dedicated to humanitarian aid.</li>
+        <li>Designed a responsive interface using HTML, JavaScript, and CSS to ensure accessibility across devices.</li>
+        <li>Collaborated with the backend team to integrate Flask APIs and SQL databases, enabling real-time data retrieval for inventory tracking, donation requests, and expenditure records.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Airbnb Price Optimization Project</h3>
+        <span class="item-date">May 2025</span>
+      </div>
+      <div class="item-subtitle">Technologies: Hive (GCP Dataproc), Python (Google Colab), Google Drive, CSV</div>
+      <ul class="resume-list">
+        <li>Developed a machine learning model to predict optimal nightly prices for Airbnb listings by analyzing location, amenities, and property type.</li>
+        <li>Utilized Hive on Google Cloud Dataproc to preprocess large-scale data with SQL-like queries, improving query efficiency and scalability.</li>
+        <li>Implemented regression models in Python via Google Colab to perform exploratory analysis, train/test data splits, and model evaluation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section class="resume-section">
+    <h2 class="section-title">Work Experience</h2>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Glow (Live Nation Partnership)</h3>
+        <span class="item-date">September 2025 – Present</span>
+      </div>
+      <div class="item-subtitle">Marketing Intern</div>
+      <div class="item-location">Washington, D.C.</div>
+      <ul class="resume-list">
+        <li>Supported multi-channel marketing campaigns (social media, email, live events) under Live Nation partnerships, driving audience engagement and lead generation.</li>
+        <li>Conducted competitor analysis and audience research to inform messaging and outreach strategies for venue conversion campaigns (Project Glow Festival, Echostage, Soundcheck).</li>
+        <li>Leveraged Ticketmaster TM1 analytics to evaluate event performance, track ROI, and support post-event lead capture and follow-up.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">College Park City University Partnership</h3>
+        <span class="item-date">February 2025 – December 2025</span>
+      </div>
+      <div class="item-subtitle">Project Manager</div>
+      <div class="item-location">College Park, MD</div>
+      <ul class="resume-list">
+        <li>Coordinated cross-functional stakeholders to define technical requirements and establish data-driven frameworks for affordable housing initiatives.</li>
+        <li>Orchestrated the launch of a centralized rental portal, transitioning manual workflows into an automated digital platform to ensure data integrity.</li>
+        <li>Optimized reporting efficiency and transparency by utilizing Excel and SharePoint to manage project plans and track performance milestones.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">University of Maryland – English Business Office</h3>
+        <span class="item-date">September 2024 – Present</span>
+      </div>
+      <div class="item-subtitle">Graduate Financial Assistant</div>
+      <div class="item-location">College Park, MD</div>
+      <ul class="resume-list">
+        <li>Created a new system for managing daily action items by transitioning from an outdated process to a streamlined Excel-based workflow.</li>
+        <li>Reviewed 100+ business documents, maintained organized physical/digital files, and utilized Excel functions (VLOOKUP, INDEX/MATCH, SUMIF, Pivot Tables) to validate data and oversee $100,000+ in financial records.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">University of Maryland – Division of Information Technology</h3>
+        <span class="item-date">January 2023 – June 2024</span>
+      </div>
+      <div class="item-subtitle">IT Support Technician</div>
+      <div class="item-location">College Park, MD</div>
+      <ul class="resume-list">
+        <li>Provided technical support to faculty, staff, and students, troubleshooting software and hardware issues across Windows and Mac systems.</li>
+        <li>Resolved 100+ tickets per shift using ServiceNow, contributing to process improvements, enhanced documentation, and faster resolution times.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">University of Maryland – Department of Mathematics</h3>
+        <span class="item-date">August 2021 – May 2024</span>
+      </div>
+      <div class="item-subtitle">Teaching Assistant (Elementary Statistics and Probability)</div>
+      <div class="item-location">College Park, MD</div>
+      <ul class="resume-list">
+        <li>Taught in-person classes for 50+ students, covering core statistical concepts and techniques.</li>
+        <li>Hosted virtual office hours using RStudio to guide students through data manipulation (dplyr), visualization (ggplot2), and statistical modeling (lm, glm).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Club Glow</h3>
+        <span class="item-date">February 2022 – Present</span>
+      </div>
+      <div class="item-subtitle">Social Media Marketing Ambassador</div>
+      <div class="item-location">Washington, D.C. (Remote)</div>
+      <ul class="resume-list">
+        <li>Executed social media strategies to promote events at Echostage, Soundcheck, and Project Glow Festival, boosting visibility via Instagram and TikTok content.</li>
+        <li>Edited short-form videos using CapCut, applying trending audio to maximize reach and engagement.</li>
+        <li>Used Excel to track ambassador outreach, monitor content performance, and analyze engagement metrics.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Montgomery County Public Schools</h3>
+        <span class="item-date">February 2025 – Present</span>
+      </div>
+      <div class="item-subtitle">Substitute Teacher</div>
+      <div class="item-location">Montgomery County, MD</div>
+      <ul class="resume-list">
+        <li>Provided instruction for K–12 students across subjects including math, science, English, phonics, and reading.</li>
+        <li>Adapted quickly to varying lesson plans or created impromptu activities to ensure continuous student engagement.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Department of Resident Life, University of Maryland</h3>
+        <span class="item-date">August 2022 – May 2024</span>
+      </div>
+      <div class="item-subtitle">Resident Assistant</div>
+      <div class="item-location">College Park, MD</div>
+      <ul class="resume-list">
+        <li>Oversaw a residential community of 100+ undergraduate students, fostering an inclusive and supportive living environment.</li>
+        <li>Planned programs promoting academic success and community building while handling conflict resolution and safety standards.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="resume-section">
+    <h2 class="section-title">Leadership &amp; Volunteer Experience</h2>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Smith Masters Information System Student Association</h3>
+        <span class="item-date">December 2024 – Present</span>
+      </div>
+      <div class="item-subtitle">Vice President of Public Relations and Communication</div>
+      <ul class="resume-list">
+        <li>Design promotional materials and event graphics using Canva to support club initiatives and increase engagement.</li>
+        <li>Manage internal/external event communications and coordinate logistics with executive board members.</li>
+        <li>Utilize Excel to track member participation and monitor event planning timelines.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">Vietnamese Student Association</h3>
+        <span class="item-date">May 2023 – May 2024</span>
+      </div>
+      <div class="item-subtitle">Executive Board Member</div>
+      <ul class="resume-list">
+        <li>Led philanthropy efforts raising over $4,000 for humanitarian causes through events and community partnerships.</li>
+        <li>Directed the annual Culture Show (200+ participants), overseeing rehearsals, play script writing, and event logistics.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="item-header">
+        <h3 class="item-title">McKinsey &amp; Company Forward Program</h3>
+        <span class="item-date">April 2025 – July 2025</span>
+      </div>
+      <div class="item-subtitle">Participant</div>
+      <ul class="resume-list">
+        <li>Completed leadership development focused on strategic problem solving, business strategy, and analytical thinking.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="btn btn-ghost">← Back to Main Portfolio</a>
+  </div>
+</footer>
+
 </body>
 </html>
